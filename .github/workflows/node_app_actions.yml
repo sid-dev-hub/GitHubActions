@@ -1,0 +1,30 @@
+# This is a demo actions for node JS app
+#
+#
+
+name: Node JS trigger
+
+on: [push, commit]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.10']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up node JS
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Run the app.js
+      run: |
+        node app.js
