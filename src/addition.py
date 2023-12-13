@@ -1,5 +1,4 @@
-# Simple program for adding 2 number for demo of Github actions
-# Comment
+# Simple program for addition, demo of Github actions 
 
 def add(a,b)
     return a+b
